@@ -19,7 +19,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.example.helloworld</mainClass>
+                            <mainClass>com.example.helloworld.HelloWorld</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
