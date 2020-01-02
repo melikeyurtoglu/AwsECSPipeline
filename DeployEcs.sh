@@ -1,5 +1,5 @@
 #!/bin/bash
-SERVICE_NAME="helloworldservice"
+SERVICE_NAME="helloworldservice1"
 IMAGE_VERSION="v_"${BUILD_NUMBER}
 TASK_FAMILY="helloworld"
 
