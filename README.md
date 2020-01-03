@@ -21,22 +21,22 @@ Hello word yazdıran bir java uygulaması.
 
   > `# aws iam create-role --role-name ecsRole --assume-role-policy-document file://forecspolicy.json`
   > `# aws iam put-role-policy --role-name ecsRole --policy-name ecsRolePolicy  --policy-document file://role.json`
-  `# aws iam create-instance-profile --instance-profile-name ecsRole`
-  `# aws iam add-role-to-instance-profile --instance-profile-name ecsRole --role-name ecsRole`
+  > `# aws iam create-instance-profile --instance-profile-name ecsRole`
+  > `# aws iam add-role-to-instance-profile --instance-profile-name ecsRole --role-name ecsRole`
 
   <li>ECS cluster'ına eklemek için optimize edilmiş Amazon Linux 2 oluşturuldu</li>
   
-  `# aws ec2 run-instances   --image-id ami-0c5abd45f676aab4f --count 1 --instance-type t2.micro --key-name helloworldkey --iam-instance-profile "Name= ecsRole" --security-groups HelloWorldSecurityGroup --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=MyECSInstance}]'`
+  > `# aws ec2 run-instances   --image-id ami-0c5abd45f676aab4f --count 1 --instance-type t2.micro --key-name helloworldkey --iam-instance-profile "Name= ecsRole" --security-groups HelloWorldSecurityGroup --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=MyECSInstance}]'`
 
   <li>ECS Cluster oluşturuldu</li>
  
-  `# aws ecs create-cluster --cluster-name default`
+  > `# aws ecs create-cluster --cluster-name default`
 
   <li>ECS task and service oluşturuldu</li>
  
-  `# sed -e "s;%BUILD_NUMBER%;0;g" helloworld.json > helloworld-v_0.json`
-  `# aws ecs register-task-definition --cli-input-json file://helloworld-v_0.json`
-  `# aws ecs create-service --cluster default --service-name helloworldfamilyservice --task-definition helloworldfamily --desired-count 0`
+  > `# sed -e "s;%BUILD_NUMBER%;0;g" helloworld.json > helloworld-v_0.json`
+  > `# aws ecs register-task-definition --cli-input-json file://helloworld-v_0.json`
+  > `# aws ecs create-service --cluster default --service-name helloworldfamilyservice --task-definition helloworldfamily --desired-count 0`
 
 </ul>
 
