@@ -6,7 +6,7 @@ Github - Jenkins - Dockers - AWS ECS
 
 Jenkins Pipeline job'ı ile Git repodan java kodu çekilir. Jenkins üzerinde maven ile derlenip docker image oluşturulur. Daha sonra bu image Aws Ecs servisinde çalıştırılır. 
 
-<h3>Uygulama<h3>
+<h3>Uygulama</h3>
 
 Hello word yazdıran bir java uygulaması.
 
