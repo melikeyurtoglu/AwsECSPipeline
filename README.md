@@ -19,8 +19,8 @@ Hello word yazdıran bir java uygulaması.
   <li>Keypair oluşturdu. Bu keypair ecs için optimize bir ec2 instance'ını oluşturulurken kullanıldı.</li>
   <li>EC2'nun ECS ile birlikte çalışabilmesi için IAM role oluşturuldu. (Kullanılan policy'lerin json dosyalarını repoda bulabilirsiniz.)</li>
 
-  `# aws iam create-role --role-name ecsRole --assume-role-policy-document file://forecspolicy.json`
-  `# aws iam put-role-policy --role-name ecsRole --policy-name ecsRolePolicy  --policy-document file://role.json`
+  > `# aws iam create-role --role-name ecsRole --assume-role-policy-document file://forecspolicy.json`
+  > `# aws iam put-role-policy --role-name ecsRole --policy-name ecsRolePolicy  --policy-document file://role.json`
   `# aws iam create-instance-profile --instance-profile-name ecsRole`
   `# aws iam add-role-to-instance-profile --instance-profile-name ecsRole --role-name ecsRole`
 
